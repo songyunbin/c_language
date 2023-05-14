@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS //
+#include <math.h>  // 여러 수학 함수를 포함하는 라이브러리
+#include <stdio.h> // 전처리기
+
+int main(void)
+{
+    double height, distance, tree_height, degrees, radians;
+
+    printf("나무와의 길이(단위는 미터): "); // 입력받은 값 출력
+    scanf("%lf", &distance);   // 나무와의 길이를 입력 받는다.
+
+    printf("측정자의 키(단위는 미터): ");  // 입력받은 값 출력
+    scanf("%lf", &height); // 측정자의 키를 입력받는다.
+   
+    printf("각도(단위는 도): "); // 입력받은 값 출력
+    scanf("%lf", &degrees); // 각도를 입력받는다.
+   
+    radians = degrees * (3.141592 / 180.0);  // tan()에 넣을 값을 구한다
+   
+    tree_height = tan(radians) * distance + height; // 나무와의 길이와 측정자의 키를 더한것을 tan(radians)와 곱함.
+    printf("나무의 높이(단위는 미터): %lf \n", tree_height); // 위에서 계산한 값 출력
+
+    return 0; // 0으로 초기화
+}
