@@ -1,0 +1,33 @@
+#include <stdlib.h>  // 함수 rand()의 원형을 정의
+#include <stdio.h>  // 전처리기
+#include <conio.h>  // 함수 getch()의 원형을 정의
+#include <time.h>  // 함수 rand()의 원형을 정의
+
+void disp_car(int car_number, int distance)  
+{
+    int i;  
+    printf("CAR #%d:", car_number);  // car#1 , car#2, car#3을 출력
+    for( i = 0; i < distance/10; i++ ) {
+            printf("*");   // 자동차의 주행 거리만큼 *를 화면에 표시
+    }
+    printf("\n");   // 줄바꿈
+}
+
+int main(void)
+{        int i;  
+         int car1_dist=0, car2_dist=0, car3_dist=0;  // car 1, car 2, car 3의 주행거리 초기화
+        
+         srand( (unsigned)time( NULL ) );  // 난수발생기의 시드를 설정
+
+          for( i = 0; i < 6; i++ ) {   // i는 0부터 5까지 증가
+                car1_dist += rand() % 100;  // rand()를 이용해 난수를 발생. %로 0에서 99로 제한
+                car2_dist += rand() % 100;  // rand()를 이용해 난수를 발생. %로 0에서 99로 제한
+                car3_dist += rand() % 100;  // rand()를 이용해 난수를 발생. %로 0에서 99로 제한
+                disp_car(1, car1_dist);  // disp_car를 호출하여 car1를 화면에 *로 표시
+                disp_car(2, car2_dist);  // disp_car를 호출하여 car2를 화면에 *로 표시
+                disp_car(3, car3_dist);  // disp_car를 호출하여 car3를 화면에 *로 표시
+                printf("---------------------\n");  // *표시하고 줄바꿈
+                _getch();  // 문자열 출력
+          } 
+          return 0;  //0으로 초기화
+}
