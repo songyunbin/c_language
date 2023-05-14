@@ -1,0 +1,28 @@
+#include<stdlib.h>  // 난수함수 rand()의 원형을 정의
+#include<stdio.h>  // 전처리기
+#include<time.h>  // 난수함수 rand()의 원형을 정의
+
+int coin_toss(void);   
+int main(void)  // 함수 tossing()을 호출
+{
+  int toss;  // 동전
+  int heads = 0;  //  동전 앞면을 정의
+  int tails = 0;  //  동전 뒷면을 정의
+  srand((unsigned)time(NULL));  // 난수발생기의 시드를 정의
+
+  for (toss = 0; toss < 100; toss++)   //  함수 coin_toss를 100번 호출한다
+  {
+        if(coin_toss() == 1)  
+            heads++;         // 동전을 던졌을때 1이 나올경우 heads.
+        else               
+            tails++;         // 아니라면 tails.
+}
+  printf("동전의 앞면: %d \n", heads);    // heads인 경우 "동전의 앞면"을 출력
+  printf("동전의 뒷면: %d \n", tails);    // tails인 경우 "동전의 뒷면"을 출력
+  return 0;                              // 0으로 초기화
+}
+int coin_toss(void)   
+{
+   int head = rand() % 2;  // rand()로 난수를 발생시킴. %로 난수의 범위를 0과 1로 제한시킨다.
+    return head;   // head로 초기화
+}
