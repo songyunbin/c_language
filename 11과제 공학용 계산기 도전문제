@@ -1,0 +1,96 @@
+#include <math.h>  // 여러 수학함수들을 포함하는 라이브러리
+#include <stdio.h>  // 전처리기
+
+int menu(void)
+{
+    int n;
+    printf("1.팩토리얼\n");
+    printf("2.싸인\n");
+    printf("3.로그(base 10)\n");
+    printf("4.제곱근\n");
+    printf("5.순열(nPr)\n");
+    printf("6.조합(nCr)\n");
+    printf("7.종료\n");
+    printf("선택해주세요: ");
+    scanf("%d", &n);  // 숫자를 입력받는다.
+    return n;
+}
+void square root
+{
+      double number;
+      printf("숫자를 입력하시오 : ");
+      scanf("%lf", &number);  // 숫자를 입력받는다.
+      
+      printf("%lf의 제곱근은 %lf", number, sqrt(number); // 입력된 숫자의 제곱근을 sqrt함수를 이용해 출력
+}
+void permutation()
+{
+      int i, n, r, result
+      printf("n값을 입력하시오 : ");
+      scanf("%d", &n);   // 숫자를 입력받는다.
+      
+      printf("r값을 입력하시오 : ");
+      scanf("%d", &r);  // 숫자를 입력받는다.
+      
+      result = 1;  // result값을 1로 초기화한다.
+      
+      for(i=n; i>=(n-r+1); i--) {
+          result=result*1   // n부터 n-r+1까지 하나씩 감소시켜서 곱한다.
+       }   
+      printf("순열의 값은 %d입니다.\n", result); // 곱해진 result값을 출력
+      return 0;  // 0으로 초기화
+ } 
+ void combination()
+ {
+    int factorial(int n) // 팩토리얼 함수 정의
+    {
+        int i, result = 1;  //result값을 1로 초기화한다.
+        
+        for (i=1; i<=n; i++)
+          result = result*1;  // 1부터 n까지 하나씩 증가시켜서 곱한뒤 그 값을 result에 곱한다.
+        return result;   // result로 전환
+    }
+    int combination(int n, int r)
+    {
+        return (factorial(n)/factorial(r) * factorial(n-r));  // n과 r의 값을 받아서 factorial함수로 계산한다.
+    }
+    int get_integer(void)
+    {
+        int n;
+        
+        printf("정수를 입력하세요 : ");
+        scanf("%d", &n);  // 숫자를 입력받는다.
+        
+        return n;  // n으로 전환
+    }
+    
+    int main(void)
+    {
+        int a, b;
+        
+        a = get_integer();  // get integer를 호출해 정수를 입력받는다.
+        b = get_integer();  // get integer를 호출해 정수를 입력받는다.
+        
+        printf("C(%d, %d) = %d\n", a, b, combination(a, b);  // combination을 호출해 a개에서 b를 선택하는 경우의 수를 구한다.
+        return 0;  // 0으로 
+    }
+
+    int main(void)
+    {
+       while(1){
+                switch(menu()) {
+                case 4:
+                        square root();
+                        break;        // 입력받은 수가 4일경우 제곱근을 나타내는 프로그램 실행후 break.
+                case 5:
+                       permutation();
+                       break;         // 입력받은 수가 5일경우 순열을 나타내는 프로그램 실행후 break.
+                case 6:
+                       combination();
+                       break;         // 입력받은 수가 6일경우 조합을 나타내는 프로그램 실행후 break.
+                default:
+                       printf("잘못된 선택입니다.\n");
+                       break;         // 입력받은 수가 메뉴에 없는 수일 경우"잘못된 선택입니다."를 출력후 break.
+                       }
+                }
+      }
