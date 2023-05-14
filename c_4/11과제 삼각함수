@@ -1,0 +1,15 @@
+// 삼각 함수 라이브러리
+#include <math.h> // 여러 수학 함수들을 포함
+#include <stdio.h>// 전처리기
+
+int main( void )
+{
+    double pi = 3.1415926535;  // 파이값을 정의
+    double x, y;  //x와 y정의
+    
+    x = pi / 2;  // 파이값을 2로 나는 것을 x에 저장
+    y = sin( x );  // sin()함수에 x를 넣은것을 y에 저장
+    printf( "sin( %f ) = %f\n", x, y );  // sin()함수값을 출력(ex: sin(%f)=...)
+    y = cos( x );  // cos()함수에 x를 넣은것을 y에 저장
+    printf( "cos( %f ) = %f\n", x, y ); //cos(x)함수값을 출력(ex: cos(x)=...)
+}
