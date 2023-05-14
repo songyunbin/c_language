@@ -1,0 +1,12 @@
+#include <stdlib.h> // 유틸리티 함수들을 모아놓은 헤더파일
+#include <stdio.h> // 전처리기
+
+int main(void)
+{
+    system("dir");  // dir 명령어 실행
+    printf("아무 키나 치세요\n");
+    _getch();  // 하나의 문자를 받는 함수
+    system("cls");  // 화면을 클리어
+
+    return 0;  // 0으로 초기화
+}
