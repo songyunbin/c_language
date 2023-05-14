@@ -1,0 +1,26 @@
+#include <stdio.h> // 전처리기
+#include <math.h> // 여러 수학 함수들을 포함하는 표준 라이브러리
+#define PI 3.141592 // 파이값 정의
+
+double rad(double degree) // 각도 단위를 래디언(rad)으로 변환
+{
+    return PI * degree / 180.0; // 파이값*degree로 리턴
+}
+void drawbar(int height) // *로 막대를 그리는 함수
+{
+      for (int i = 0; i < height; i++)
+              printf("*");  // 0부터 height-1까지 하나씩 증가시켜 *를 출력
+      printf("\n");  // *출력후 줄바꿈
+}
+
+int main(void)
+{
+      int degree, x, y; 
+      for (degree = 0; degree <= 90; degree += 10) {
+                // 싸인값은 -1.0에서 1.0이므로 정수로 반올림하여서 증폭한다.
+                // 0부터 90까지 10도 단위로 출력.
+                y = (int)(60 * sin(rad((double)degree)) + 0.5);  // 60과 sin()을 곱한뒤 0.5씩 더한걸 y에 저장.
+                drawbar(y); 
+      }
+      return 0; // 0으로 초기화
+}
