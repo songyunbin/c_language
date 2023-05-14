@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <time.h>
+int main(void)
+{
+    time_t start, end; // time_t는 unsigned long과 동일하다. 1970년 1월 1일 이후의 시간을 초단위로 반환.
+    start = time(NULL); // 시작시간
+    printf("10초가 되면 아무 키나 누르세요\n");
+    while (1)  {
+                if (getchar())  // 사용자가 키를 누를때까지 기다림.
+                      break;    // 누르면 멈춤
+    }
+    printf("종료되었습니다.\n");
+    end = time(NULL); // 사용자가 멈춘 시간 받음
+    printf("경과된 시간은 %ld 초입니다. \n", end - start); // 사용자가 멈춘 시간과 정확한 시간의 오차 범위를 계산하여 출력
+    return 0;  //0으로 초기화
+}
