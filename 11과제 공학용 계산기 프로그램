@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include<math.h>
+
+int menu(void)
+{
+    int n;
+    printf("1.팩토리얼\n");
+    printf("2.싸인\n");
+    printf("3.로그(base 10)\n");
+    printf("4.제곱근\n");
+    printf("5.순열(nPr)\n");
+    printf("6.조합(nCr)\n");
+    printf("7.종료\n");
+    printf("선택해주세요: ");
+    scanf("%d", &n);
+    return n;
+}
+void factorial()  // 팩토리얼
+{
+    long long n, result=1, i;
+    printf("정수를 입력하시오: ");
+    scanf("%lld", &n);  // 값을 입력받는다
+    for (i = 1; i <= n; i++)
+            result = result *i;  // 1부터 n까지 하나씩 증가시켜 계속 곱해간다.(ex: n=4이면 24=1*2*3*4)
+    printf("결과 = %lld\n\n", result);  // 결과값을 출력시킨다.
+}
+
+void sine()  // 싸인
+{
+    double a, result; 
+    printf("각도를 입력하시오: ");
+    scanf("%lf", &a);  // 값을 입력받는다
+    result = sin(a);  // 입력받은값을 sin()에 넣는다.
+    printf("결과 = %lf\n\n", result);  // 결과값 출력
+}
+void logBase10()  // 로그
+{
+    double a, result;
+    printf("실수값을 입력하시오: ");
+    scanf("%lf", &a);  // 값을 입력받는다.
+    if (a <= 0.0)
+          printf("오류\n");  // 입력받은 값이 0.0보다 작을 경우 "오류"를 출력
+    else {
+          result = log10(a);
+          printf("결과 = %lf\n\n", result);  // 아니라면 log10()에 입력받은 값을 넣고 출력한다.
+    }
+}
+int main(void)
+{
+    while (1) {     
+            switch (menu()) {  // 사용자가 입력한 숫자를 받는다
+            case 1:
+                    factorial();
+                    break;          // 입력한 숫자가 1일 경우 팩토리얼 값을 계산하는 프로그램을 나타내고 break.
+            case 2:
+                    sine();
+                    break;          // 입력한 숫자가 2일 경우 싸인 값을 계산하는 프로그램을 나타내고 break.
+            case 3:
+                    logBase10();
+                    break;          // 입력한 숫자가 2일 경우 로그 값을 계산하는 프로그램을 나타내고 break.
+            case 7:
+                    printf("종료합니다.\n");
+                    return 0;       // 입력한 숫자가 7일 경우 프로그램을 종료시킨다.
+            default:
+                    printf("잘못된 선택입니다.\n");
+                    break;         // 입력한 숫자가 메뉴에 없는 경우 "잘못된 선택입니다."를 출력후 break.
+            }
+      }
+}
