@@ -72,7 +72,7 @@ void permutation()
         b = get_integer();  // get integer를 호출해 정수를 입력받는다.
         
         printf("C(%d, %d) = %d\n", a, b, combination(a, b);  // combination을 호출해 a개에서 b를 선택하는 경우의 수를 구한다.
-        return 0;  // 0으로 
+        return 0;  // 0으로 초기화
     }
 
     int main(void)
