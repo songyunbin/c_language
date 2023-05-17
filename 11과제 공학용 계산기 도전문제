@@ -38,7 +38,7 @@ void permutation()
           result=result*1   // n부터 n-r+1까지 하나씩 감소시켜서 곱한다.
        }   
       printf("순열의 값은 %d입니다.\n", result); // 곱해진 result값을 출력
-      return 0;  // 0으로 초기화
+      return 0;  // 0으로 반환
  } 
  void combination()
  {
@@ -61,7 +61,7 @@ void permutation()
         printf("정수를 입력하세요 : ");
         scanf("%d", &n);  // 숫자를 입력받는다.
         
-        return n;  // n으로 전환
+        return n;  // n으로 반환
     }
     
     int main(void)
@@ -72,7 +72,7 @@ void permutation()
         b = get_integer();  // get integer를 호출해 정수를 입력받는다.
         
         printf("C(%d, %d) = %d\n", a, b, combination(a, b);  // combination을 호출해 a개에서 b를 선택하는 경우의 수를 구한다.
-        return 0;  // 0으로 초기화
+        return 0;  // 0으로 반환
     }
 
     int main(void)
