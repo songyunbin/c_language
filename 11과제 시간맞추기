@@ -12,5 +12,5 @@ int main(void)
     printf("종료되었습니다.\n");
     end = time(NULL); // 사용자가 멈춘 시간 받음
     printf("경과된 시간은 %ld 초입니다. \n", end - start); // 사용자가 멈춘 시간과 정확한 시간의 오차 범위를 계산하여 출력
-    return 0;  //0으로 초기화
+    return 0;  // 0으로 반환
 }
