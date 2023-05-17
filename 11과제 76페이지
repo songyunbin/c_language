@@ -8,5 +8,5 @@ int main(void)
     _getch();  // 하나의 문자를 받는 함수
     system("cls");  // 화면을 클리어
 
-    return 0;  // 0으로 초기화
+    return 0;  // 0으로 반환
 }
