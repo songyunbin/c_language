@@ -22,5 +22,5 @@ int main(void)
                 y = (int)(60 * sin(rad((double)degree)) + 0.5);  // 60과 sin()을 곱한뒤 0.5씩 더한걸 y에 저장.
                 drawbar(y); 
       }
-      return 0; // 0으로 초기화
+      return 0; // 0으로 반환
 }
