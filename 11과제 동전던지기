@@ -19,10 +19,10 @@ int main(void)  // 함수 tossing()을 호출
 }
   printf("동전의 앞면: %d \n", heads);    // heads인 경우 "동전의 앞면"을 출력
   printf("동전의 뒷면: %d \n", tails);    // tails인 경우 "동전의 뒷면"을 출력
-  return 0;                              // 0으로 초기화
+  return 0;                              // 0으로 반환
 }
 int coin_toss(void)   
 {
    int head = rand() % 2;  // rand()로 난수를 발생시킴. %로 난수의 범위를 0과 1로 제한시킨다.
-    return head;   // head로 초기화
+    return head;   // head로 반환
 }
